@@ -19,8 +19,9 @@ const botName = "weWatch Bot";
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
-const io = new Server(server);
-
+const io = new Server(server, {
+  cors: { origin: "*" },
+});
 app.get("/room", (req, res) => {
   const room = createNewRoom();
   res.send({ room });
