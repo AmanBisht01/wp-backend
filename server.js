@@ -37,6 +37,10 @@ app.get("/join", (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("GET Request Called");
+});
+
 app.post("/change_name", (req, res) => {
   console.log(req.body);
 });
